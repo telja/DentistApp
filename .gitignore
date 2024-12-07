@@ -1,0 +1,18 @@
+# Build and debug folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.vs
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Secrets and sensitive data
+appsettings.json
+
+# Other
+.DS_Store

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentistApp.DAL", "DentistApp.DAL\DentistApp.DAL.csproj", "{F986F3FA-7C97-43BB-8B46-0999C426BC98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentistApp.BLL", "DentistApp.BLL\DentistApp.BLL.csproj", "{B8AC6CCA-B2BE-420B-A5A9-EE5057807455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentistApp.Core", "DentistApp.Core\DentistApp.Core.csproj", "{2C0589C9-B370-4FD7-AD62-F653328CC7E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentistApp.WebAPI", "DentistApp.WebAPI\DentistApp.WebAPI.csproj", "{502D36F9-CFB4-4C48-B2DE-C1670406832F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F986F3FA-7C97-43BB-8B46-0999C426BC98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F986F3FA-7C97-43BB-8B46-0999C426BC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F986F3FA-7C97-43BB-8B46-0999C426BC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F986F3FA-7C97-43BB-8B46-0999C426BC98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8AC6CCA-B2BE-420B-A5A9-EE5057807455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8AC6CCA-B2BE-420B-A5A9-EE5057807455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8AC6CCA-B2BE-420B-A5A9-EE5057807455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8AC6CCA-B2BE-420B-A5A9-EE5057807455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C0589C9-B370-4FD7-AD62-F653328CC7E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0589C9-B370-4FD7-AD62-F653328CC7E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0589C9-B370-4FD7-AD62-F653328CC7E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0589C9-B370-4FD7-AD62-F653328CC7E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{502D36F9-CFB4-4C48-B2DE-C1670406832F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{502D36F9-CFB4-4C48-B2DE-C1670406832F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502D36F9-CFB4-4C48-B2DE-C1670406832F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{502D36F9-CFB4-4C48-B2DE-C1670406832F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
