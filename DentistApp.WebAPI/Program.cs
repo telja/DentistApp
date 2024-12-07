@@ -33,6 +33,16 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 builder.Services.AddScoped<IUserQueries, UserQueries>();
 builder.Services.AddScoped<IUserManager, UserManager>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:5003/") // URL Blazor aplikacije
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 // JWT konfiguracija
 var jwtKey = builder.Configuration["Jwt:Key"] ?? "your_super_secret_key";
 var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "your_issuer";
@@ -61,7 +71,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthentication();
