@@ -1,11 +1,14 @@
+using System.Text;
 using DentistApp.BLL.Manager;
 using DentistApp.BLL.ManagerInterfaces;
 using DentistApp.DAL;
 using DentistApp.DAL.Models;
 using DentistApp.DAL.Queries;
 using DentistApp.DAL.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,8 +33,25 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 builder.Services.AddScoped<IUserQueries, UserQueries>();
 builder.Services.AddScoped<IUserManager, UserManager>();
 
+// JWT konfiguracija
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "your_super_secret_key";
+var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "your_issuer";
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtIssuer,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+        };
+    });
 builder.Services.AddAuthorization();
-builder.Services.AddAuthentication();
 builder.Services.AddControllers();
 var app = builder.Build();
 

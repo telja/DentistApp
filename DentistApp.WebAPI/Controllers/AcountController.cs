@@ -28,4 +28,18 @@ public class AccountController : ControllerBase
 
         return BadRequest(result);
     }
+    
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginUserDTO model)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        var token = await _userManager.LoginUserAsync(model.Email, model.Password);
+
+        if (token == null)
+            return Unauthorized("Invalid email or password.");
+
+        return Ok(new { Token = token });
+    }
 }
